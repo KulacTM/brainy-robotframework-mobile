@@ -2,18 +2,10 @@
 Library    AppiumLibrary
 
 
-*** Test Cases ***
-First Test
-
-    Open App
-    Sleep    5s
-    Close Application
-
-
 *** Keywords ***
 Open App
     Open Application    
-    ...    remote_url=http://127.0.0.1:4723  
+    ...    remote_url=http://127.0.0.1:4723
     ...    automationName=UiAutomator2    
     ...    platformName=Android    
     ...    platformVersion=13    
