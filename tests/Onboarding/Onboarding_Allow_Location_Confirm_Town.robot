@@ -1,12 +1,14 @@
 *** Settings ***
 Resource    onboarding.resource
+Suite Setup        common.Suite Setup
+Suite Teardown     common.Suite Teardown
+Test Setup       common.Launch App
+Test Teardown    common.Close App
 
 
 *** Test Cases ***
 Allow Location And Change Town
     [Documentation]    Онбординг с разрешением геолокации и подтверждением выбранного города
-
-    launcher.Open App
 
     onboarding.Allow Location
     onboarding.Confirm Town
