@@ -11,4 +11,4 @@ Allow Location And Change Town
     onboarding.Allow Location
     onboarding.Confirm Town
     onboarding.Allow Notifications
-    Wait Until Page Contains Element    ru.afisha.android:id/itemTileEventIv
+    Wait Until Page Contains Element    ${VERTICAL_FEATURED_IMAGE}

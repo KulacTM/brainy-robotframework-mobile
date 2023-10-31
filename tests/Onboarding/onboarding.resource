@@ -7,23 +7,23 @@ Resource    ../common.resource
 Allow Location
     [Documentation]    Разрешить геолокацию
 
-    Wait Until Page Contains Element    locator=ru.afisha.android:id/fragOnboardinSubmitBtn    timeout=10s
-    Click Element    locator=ru.afisha.android:id/fragOnboardinSubmitBtn
+    Wait Until Page Contains Element    ${ONBOARDING_SUBMIT_BTN}     timeout=10s
+    Click Element    ${ONBOARDING_SUBMIT_BTN} 
 
-    Wait Until Page Contains Element    locator=com.android.permissioncontroller:id/permission_allow_foreground_only_button
-    Click Element    com.android.permissioncontroller:id/permission_allow_foreground_only_button
+    Wait Until Page Contains Element    ${PERMISSION_FOREGROUND}
+    Click Element    ${PERMISSION_FOREGROUND}
 
 Confirm Town
     [Documentation]    Подтвердить город
 
-    Wait Until Page Contains Element    android:id/button1
-    Click Element    android:id/button1
+    Wait Until Page Contains Element    ${ONBOARDING_CONFIRM_CITY_BTN}
+    Click Element    ${ONBOARDING_CONFIRM_CITY_BTN}
 
 Allow Notifications
     [Documentation]    Разрешить уведомления
 
-    Wait Until Page Contains Element    ru.afisha.android:id/fragOnboardinSubmitBtn
-    Click Element    ru.afisha.android:id/fragOnboardinSubmitBtn
+    Wait Until Page Contains Element    ${ONBOARDING_SUBMIT_BTN} 
+    Click Element    ${ONBOARDING_SUBMIT_BTN} 
 
-    Wait Until Page Contains Element    com.android.permissioncontroller:id/permission_allow_button
-    Click Element    com.android.permissioncontroller:id/permission_allow_button
+    Wait Until Page Contains Element    ${PERMISSION_ALLOW}
+    Click Element    ${PERMISSION_ALLOW}
