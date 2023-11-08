@@ -7,7 +7,7 @@ Test Teardown    common.Close App
 
 
 *** Test Cases ***
-Allow Location And Change Town
+Allow Location And Confirm Town
     [Documentation]    Онбординг с разрешением геолокации и подтверждением выбранного города
 
     onboarding.Allow Location

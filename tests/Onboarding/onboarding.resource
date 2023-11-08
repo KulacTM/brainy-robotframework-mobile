@@ -4,6 +4,14 @@ Resource    ../common.resource
 
 
 *** Keywords ***
+Allow Location And Confirm Town
+    [Documentation]    Онбординг с разрешением геолокации и подтверждением выбранного города
+
+    Allow Location
+    Confirm Town
+    IF    ${PLATFORM_VERSION} >= 13    Allow Notifications
+    Wait Until Page Contains Element    ${VERTICAL_FEATURED_IMAGE}
+
 Allow Location
     [Documentation]    Разрешить геолокацию
 
