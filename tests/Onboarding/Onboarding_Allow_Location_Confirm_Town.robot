@@ -12,5 +12,5 @@ Allow Location And Change Town
 
     onboarding.Allow Location
     onboarding.Confirm Town
-    onboarding.Allow Notifications
+    IF    ${PLATFORM_VERSION} >= 13    onboarding.Allow Notifications
     Wait Until Page Contains Element    ${VERTICAL_FEATURED_IMAGE}

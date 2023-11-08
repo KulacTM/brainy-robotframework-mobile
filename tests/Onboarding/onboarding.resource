@@ -10,8 +10,13 @@ Allow Location
     Wait Until Page Contains Element    ${ONBOARDING_SUBMIT_BTN}     timeout=10s
     Click Element    ${ONBOARDING_SUBMIT_BTN} 
 
-    Wait Until Page Contains Element    ${PERMISSION_FOREGROUND}
-    Click Element    ${PERMISSION_FOREGROUND}
+    IF    ${PLATFORM_VERSION} > 9
+        Wait Until Page Contains Element    ${PERMISSION_FOREGROUND}
+        Click Element    ${PERMISSION_FOREGROUND}
+    ELSE
+        Wait Until Page Contains Element    ${PERMISSION_ALLOW_OLD}
+        Click Element    ${PERMISSION_ALLOW_OLD}
+    END
 
 Confirm Town
     [Documentation]    Подтвердить город
