@@ -21,6 +21,14 @@ Switch Stories Slides By Tap
     Switch Slide By Tap    "left"
     Wait Until Page Contains Element    ru.afisha.android:id/fragStoriesTitleWidgetTv
 
+Check Viewed Story
+    [Documentation]    Проверяем, что сторис помечается просмотренной и не отображается на экране после обновления страницы
+
+    Find Last Slide
+    Go Back And Refresh View
+
+
+*** Keywords ***
 Find Last Slide
     [Documentation]    Найти последний слайд сторис
 
@@ -37,8 +45,6 @@ Find Last Slide
     END
     Page Should Contain Element    ru.afisha.android:id/fragStoriesTitleWidgetBtn
 
-
-*** Keywords ***
 Switch Slide By Tap
     [Documentation]     Переключение слайда сторис тапом
     ...    аргументы: side - сторона нажатия (left или right) 
@@ -59,3 +65,18 @@ Switch Slide By Tap
     ${y}=    Evaluate    ${height} * 0.5
     ${tap_position}=    Create List    ${x}    ${y}
     Tap With Positions    100    ${tap_position}
+
+Go Back And Refresh View
+    [Documentation]    Вернуться и обновить экран
+
+    Press Keycode    4
+    Page Should Contain Element    ru.afisha.android:id/itemStoryViewedMark
+
+    ${stories_text}=    Get Element Attribute    ru.afisha.android:id/itemStoryTitle    attribute=text
+
+    Terminate Application    ${APP_PACKAGE}
+    Activate Application    ${APP_PACKAGE}
+
+    Wait Until Element Is Visible    ru.afisha.android:id/itemStoryImage
+    Page Should Not Contain Element    ru.afisha.android:id/itemStoryViewedMark
+    Page Should Not Contain Text    ${stories_text}
