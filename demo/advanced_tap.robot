@@ -21,6 +21,22 @@ Introduction To Tap With Positions
     Switch Slide By Tap    "left"
     Wait Until Page Contains Element    ru.afisha.android:id/fragStoriesTitleWidgetTv
 
+Find Last Slide
+    [Documentation]    Найти последний слайд сторис
+
+    Wait Until Page Contains Element    ru.afisha.android:id/itemStoryImage
+    Click Element    ru.afisha.android:id/itemStoryImage
+    Wait Until Page Contains Element    ru.afisha.android:id/fragStoriesIv
+
+    FOR  ${i}  IN RANGE    15
+        ${is_element_present}=    Run Keyword And Return Status    
+        ...    Wait Until Element Is Visible    ru.afisha.android:id/fragStoriesTitleWidgetBtn    timeout=1s
+
+        IF     ${is_element_present}    BREAK
+        Switch Slide By Tap    "right"
+    END
+    Page Should Contain Element    ru.afisha.android:id/fragStoriesTitleWidgetBtn
+
 
 *** Keywords ***
 Switch Slide By Tap
